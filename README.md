@@ -8,7 +8,7 @@ The bamazonCustomer.js command line application will allow users to buy products
 
 ## bamazonCustomer.js Example
 
-![bamacustomer.js example](https://raw.githubusercontent.com/bh68484/bamazon/master/gif_examples/bamazonCustomer.gif"bamazonCustomer.js")
+![bamacustomer.js example](https://raw.githubusercontent.com/bh68484/bamazon/master/gif_examples/bamazonCustomer.gif)
 
 ## bamazonManager.js
 
