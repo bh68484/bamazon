@@ -180,7 +180,46 @@ function addInventory() {
     });
 }
 //function to allow the user to add a new product to the database
-function addProduct() {}
+function addProduct() {
+  inquirer
+    .prompt([
+      {
+        name: "productAdd",
+        type: "input",
+        message: "What product would you like to add to the store?"
+      },
+      {
+        name: "departmentName",
+        type: "input",
+        message: "Please enter the department name."
+      },
+      {
+        name: "price",
+        type: "input",
+        message: "Please enter the products price."
+      },
+      {
+        name: "stock",
+        type: "input",
+        message: "Please enter the stock available for the product."
+      }
+    ])
+    .then(function(answer) {
+      connection.query(
+        "INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES(?, ?, ?, ?);",
+        [answer.productAdd, answer.departmentName, answer.price, answer.stock],
+        function(err, results) {
+          if (err) console.log("Error: " + err);
+          connection.end();
+        }
+      );
+    });
+}
+
+// connection.query(
+//   "INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES(?, ?, ?, ?, ?);", [answer.productAdd, answer.departmentName, answer.price, answer.stock], function(err, results) {
+//     if (err) console.log("Error: " + err);
+// }
 
 //function to allow the user to quit the application
 function quitFunction() {
