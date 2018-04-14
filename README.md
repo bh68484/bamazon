@@ -6,6 +6,10 @@
 
 The bamazonCustomer.js command line application will allow users to buy products from a set database. After the user has selected a product and an amount it will console log out the information to the screen along with the total amount for the user. The amount the user enters will update the database to the new amount left.
 
+## bamazonCustomer.js Example
+
+![bamacustomer.js example](https://raw.githubusercontent.com/bh68484/bamazon/master/gif_examples/bamazonCustomer.gif"bamazonCustomer.js")
+
 ## bamazonManager.js
 
 The bamazonManager.js command line application presents the user with multiple choices on what the user can do.
