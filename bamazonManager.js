@@ -71,7 +71,8 @@ function viewProducts() {
           results[i].price +
           "\n" +
           "Stock Quantity: " +
-          results[i].stock_quantity
+          results[i].stock_quantity +
+          "\r\n"
       );
     }
     console.log("\r\n");
@@ -98,7 +99,8 @@ function lowInventory() {
             results[i].price +
             "\n" +
             "Stock Quantity: " +
-            results[i].stock_quantity
+            results[i].stock_quantity +
+            "\r\n"
         );
     }
     console.log("\r\n");
@@ -107,6 +109,29 @@ function lowInventory() {
 }
 //function that will allow a user to add inventory to the current stock and console logs the amount selected and the new total.
 function addInventory() {
+  connection.query("SELECT * FROM products", function(err, results) {
+    if (err) throw err;
+    for (i = 0; i < results.length; i++) {
+      console.log(
+        "ID Name: " +
+          results[i].item_id +
+          "\n" +
+          "Product Name: " +
+          results[i].product_name +
+          "\n" +
+          "Department Name: " +
+          results[i].department_name +
+          "\n" +
+          "Price: " +
+          results[i].price +
+          "\n" +
+          "Stock Quantity: " +
+          results[i].stock_quantity +
+          "\n"
+      );
+      console.log("\r\n");
+    }
+  });
   // prompt to ask user to choose a product according to ID, and select an amount.
   inquirer
     .prompt([
@@ -164,7 +189,7 @@ function addInventory() {
                 " " +
                 "have been added to the stores stock"
             );
-            console.log("===");
+            console.log("=====");
             console.log(
               "The store's total amount of " +
                 results[i].product_name +
@@ -210,16 +235,23 @@ function addProduct() {
         [answer.productAdd, answer.departmentName, answer.price, answer.stock],
         function(err, results) {
           if (err) console.log("Error: " + err);
-          connection.end();
+          console.log(
+            answer.stock +
+              " " +
+              answer.productAdd +
+              " " +
+              "have been added to department " +
+              answer.departmentName +
+              " at a cost of " +
+              answer.price +
+              " each"
+          );
+          console.log();
+          startManager();
         }
       );
     });
 }
-
-// connection.query(
-//   "INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES(?, ?, ?, ?, ?);", [answer.productAdd, answer.departmentName, answer.price, answer.stock], function(err, results) {
-//     if (err) console.log("Error: " + err);
-// }
 
 //function to allow the user to quit the application
 function quitFunction() {

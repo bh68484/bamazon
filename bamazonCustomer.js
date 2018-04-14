@@ -60,6 +60,7 @@ function displayItems() {
           "\n" +
           "Stock Quantity: " +
           results[i].stock_quantity
+          + "\r\n"
       );
     }
     purchase();
