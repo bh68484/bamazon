@@ -8,7 +8,7 @@ The bamazonCustomer.js command line application will allow users to buy products
 
 ## bamazonCustomer.js Example
 
-![bamacustomer.js example](https://raw.githubusercontent.com/bh68484/bamazon/master/gif_examples/bamazonCustomer.gif)
+![bamazonCustomer.js example](https://raw.githubusercontent.com/bh68484/bamazon/master/gif_examples/bamazonCustomer.gif)
 
 ## bamazonManager.js
 
@@ -33,3 +33,7 @@ The fourth choice allows the user to add a completely new product into the datab
 ## Choice 5 - Quit
 
 The fifth choice allows the user to quit the application. It will disconnect from the database and will return uses to the command line prompt.
+
+## bamazonManager.js Example
+
+![bamamazonManager.js example](https://raw.githubusercontent.com/bh68484/bamazon/master/gif_examples/bamazonManager.gif)
